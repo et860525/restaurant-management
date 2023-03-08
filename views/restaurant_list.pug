@@ -1,0 +1,14 @@
+extends layout
+
+block head
+  title= 'RM - List'
+
+block content
+  a.btn.btn-primary.my-5(href='/restaurant/create' role='button') Create
+  h1 Restaurant
+  ul
+    each restaurant in restaurants
+      li
+        a(href=`/restaurant/${restaurant.id}`)= restaurant.name
+    else
+      li There are no values

@@ -11,6 +11,7 @@ export class App {
 
   constructor() {
     this.setEnvironment();
+    this.setUrlencoded();
     this.setCors();
     this.setHelmet();
     this.setMorgan();
@@ -30,6 +31,10 @@ export class App {
 
   private setEnvironment(): void {
     dotenv.config();
+  }
+
+  private setUrlencoded(): void {
+    this.app.use(express.urlencoded({ extended: false }));
   }
 
   private setHelmet(): void {
