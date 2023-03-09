@@ -34,5 +34,12 @@ export class RestaurantRepository {
   }
 
   public async updateRestaurant() {}
-  public async removeRestaurant() {}
+  public async removeRestaurant(id: number) {
+    const deleteRestaurant = await this.prisma.restaurant.delete({
+      where: {
+        id: id,
+      },
+    });
+    return deleteRestaurant;
+  }
 }

@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import { RouteBase } from '../../base/route.base';
 import { RestaurantController } from './restaurant.controller';
 
@@ -15,9 +15,6 @@ export class RestaurantRoute extends RouteBase {
   }
 
   protected registerRoute(): void {
-    this.router.get('/', (req: Request, res: Response, next: NextFunction) => {
-      res.render('index');
-    });
     this.router.get(
       '/restaurant',
       this.responseHandler(this.controller.getRestaurants)
