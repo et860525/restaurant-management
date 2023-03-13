@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1.mt-5 Menu 
+  ul
+    each menuItem in menuItems
+      li
+        a(href=`/menuItems/${menuItem.id}`)= menuItem.name
+    else
+      li There are no values

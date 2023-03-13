@@ -1,19 +1,19 @@
 import { RouteBase } from '../base/route.base';
-import { RestaurantRoute } from './restaurant/restaurant.routing';
+import { MenuItemRoute } from './menu/menu.routing';
 
 export class MainRoute extends RouteBase {
-  private restaurantRoute!: RestaurantRoute;
+  private menuItemRoute!: MenuItemRoute;
 
   constructor() {
     super();
   }
 
   protected initial(): void {
-    this.restaurantRoute = new RestaurantRoute();
+    this.menuItemRoute = new MenuItemRoute();
     super.initial();
   }
 
   protected registerRoute(): void {
-    this.router.use('/', this.restaurantRoute.router);
+    this.router.use('/', this.menuItemRoute.router);
   }
 }
