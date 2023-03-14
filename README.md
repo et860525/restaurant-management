@@ -4,6 +4,8 @@ The Restaurant Management project includes a simple web application and a relate
 
 這個 Restaurant Management 專案包含一個簡單的網頁應用程式和相關的後端 API，它們可以協同運作，管理餐廳的菜單、員工與客戶資料等重要資訊。此專案亦包含數據庫，用於儲存各種餐廳相關的資料。
 
+> 我已經把建構此專案的過程寫成文章記錄，請到 [Mango Blog](https://et860525.github.io/)
+
 # Environment
 
 - Node.js (>= 18)
