@@ -23,9 +23,15 @@ The Restaurant Management project includes a simple web application and a relate
    ```
 4. Migrate
    ```bash
-   pnpx prisma migrate dev --name init
+   pnpx prisma migrate dev
+   # or
+   pnpx prisma migrate reset
    ```
-5. Start the server
+5. Initial data
+   ```bash
+   pnpm ts-node src/repository/initData.ts
+   ```
+6. Start the server
    ```bash
    pnpm dev
    ```

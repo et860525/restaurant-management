@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import { ControllerBase } from '../../base/controller.base';
-import { MenuItemService } from './menu.service';
+import { MenuItemService } from './menuItem.service';
 
 export class MenuItemController extends ControllerBase {
   private readonly menuService = new MenuItemService();

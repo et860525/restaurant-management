@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1.mt-5 ##{order.tag}
+  p Customer: #{order.customer.name} 
+  p Table Number: #{order.table.number} 
+  p Status: #{order.status}
+  p Payment: #{order.payment_method}
+  p Items:
+    ul
+      each item in order.items
+        li
+          a(href=`/menuItems/${item.menuItemId}`)= item.menuItem.name
+      else
+        li There are no values

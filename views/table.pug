@@ -2,3 +2,10 @@ extends layout
 
 block content
   h1.mt-5 Table 
+  ul
+    each table in tables
+      li
+        a(href=`/tables/${table.id}`) Number #{table.number} table
+        span  #{table.status}
+    else
+      li There are no values

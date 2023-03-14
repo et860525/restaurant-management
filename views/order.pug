@@ -2,3 +2,9 @@ extends layout
 
 block content
   h1.mt-5 Order
+  ul
+    each order in orders
+      li
+        a(href=`/orders/${order.id}`) ##{order.tag} 
+    else
+      li There are no values

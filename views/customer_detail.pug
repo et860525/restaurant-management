@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1.mt-5= customer.name  
+  p Phone number: #{customer.phone}
+  p Email: #{customer.email}
+  p Address: #{customer.address} 
+  p Orders: 
+    ul
+      each order in customer.orders
+        li
+          a(href=`/orders/${order.id}`) ##{order.tag}
+      else
+        li There are no values

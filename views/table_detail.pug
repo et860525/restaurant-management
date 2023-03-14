@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1.mt-5 Table #{table.number}
+  p Capacity: #{table.capacity}
+  p Status: #{table.status}
+  p Orders: 
+    ul
+      each order in table.orders
+        li
+          a(href=`/orders/${order.id}`) ##{order.tag}
+      else
+        li There are no order in this table

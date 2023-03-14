@@ -1,30 +1,30 @@
 import express from 'express';
 import { RouteBase } from '../../base/route.base';
-import { MenuItemController } from './menuItem.controller';
+import { CustomerController } from './customer.controller';
 
-export class MenuItemRoute extends RouteBase {
-  protected controller!: MenuItemController;
+export class CustomerRoute extends RouteBase {
+  protected controller!: CustomerController;
 
   constructor() {
     super();
   }
 
   protected initial(): void {
-    this.controller = new MenuItemController();
+    this.controller = new CustomerController();
     super.initial();
   }
 
   protected registerRoute(): void {
     this.router.get(
-      '/menuItems',
+      '/customers',
       this.responseHandler(this.controller.get_many)
     );
     this.router
-      .route('/menuItems/create')
+      .route('/customers/create')
       .get(this.responseHandler(this.controller.create)) // Need to change
       .post(express.json(), this.responseHandler(this.controller.create));
     this.router.get(
-      '/menuItems/:id',
+      '/customers/:id',
       this.responseHandler(this.controller.get)
     );
   }

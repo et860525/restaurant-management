@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1.mt-5 Customer 
+  ul
+    each customer in customers
+      li
+        a(href=`/customers/${customer.id}`)= customer.name
+    else
+      li There are no values
