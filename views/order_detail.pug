@@ -2,7 +2,8 @@ extends layout
 
 block content
   h1.mt-5 ##{order.tag}
-  p Customer: #{order.customer.name} 
+  p Customer: 
+    a(href=`/customers/${order.customer.id}`) #{order.customer.name} 
   p Table Number: #{order.table.number} 
   p Status: #{order.status}
   p Payment: #{order.payment_method}

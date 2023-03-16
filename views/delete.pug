@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1.mt-5 Do you want to delete #{deleteItem.name} ?
+  form.my-4(method='POST')
+    button.btn.btn-danger(type='submit') Yes
+    a.ms-2.btn.btn-secondary(href=`/${deleteUrl}/${deleteItem.id}`) No 

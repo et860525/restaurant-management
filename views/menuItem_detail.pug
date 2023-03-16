@@ -2,6 +2,8 @@ extends layout
 
 block content
   h1.mt-5= menuItem.name  
+  a.my-4.btn.btn-primary(href=`/menuItems/${menuItem.id}/update`) Update
+  a.my-4.ms-2.btn.btn-danger(href=`/menuItems/${menuItem.id}/delete`) Delete
   p= menuItem.description
   p Price: #{menuItem.price}
    

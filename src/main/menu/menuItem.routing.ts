@@ -21,11 +21,25 @@ export class MenuItemRoute extends RouteBase {
     );
     this.router
       .route('/menuItems/create')
-      .get(this.responseHandler(this.controller.create)) // Need to change
-      .post(express.json(), this.responseHandler(this.controller.create));
+      .get(this.responseHandler(this.controller.form))
+      .post(
+        express.json(),
+        this.responseRedirectHandler(this.controller.create)
+      );
     this.router.get(
       '/menuItems/:id',
       this.responseHandler(this.controller.get)
     );
+    this.router
+      .route('/menuItems/:id/delete')
+      .get(this.responseHandler(this.controller.delete_get))
+      .post(this.responseRedirectHandler(this.controller.delete));
+    this.router
+      .route('/menuItems/:id/update')
+      .get(this.responseHandler(this.controller.update_get))
+      .post(
+        express.json(),
+        this.responseRedirectHandler(this.controller.update)
+      );
   }
 }

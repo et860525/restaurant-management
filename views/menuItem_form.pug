@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  form.mt-5(method='POST')
+    if !data
+      .mb-5
+        h1 Create Menu Item
+      .mb-3
+        label.form-label(for='nameInput') Name: 
+        input#nameInput.form-control(type='text' name='name' placeholder='Enter name...')
+      .mb-3
+        label.form-label(for='descriptionInput') Description: 
+        input#descriptionInput.form-control(type='text' name='description' placeholder='Enter description...')
+      .mb-3
+        label.form-label(for='priceInput') Price: 
+        input#priceInput.form-control(type='number' name='price' min='1' placeholder='Enter price...')
+      button.btn.btn-primary(type='submit') Create
+    else
+      .mb-5
+        h1 Update Menu Item
+      .mb-3
+        label.form-label(for='nameInput') Name: 
+        input#nameInput.form-control(type='text' name='name' value=data.name placeholder='Enter name...')
+      .mb-3
+        label.form-label(for='descriptionInput') Description: 
+        input#descriptionInput.form-control(type='text' name='description' value=data.description placeholder='Enter description...')
+      .mb-3
+        label.form-label(for='priceInput') Price: 
+        input#priceInput.form-control(type='number' name='price' min='1' value=data.price placeholder='Enter price...')
+      button.btn.btn-primary(type='submit') Update 
